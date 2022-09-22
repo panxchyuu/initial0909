@@ -1,0 +1,277 @@
+{
+  "source_table": {
+    "table_name": "ods.ods_oms_sdb_ome_products_initial",
+    "table_location": "oss://decathlon-${ENV_NAME}-cndp-ods/ods_oms/ods_oms_sdb_ome_products_initial",
+    "pt_key": "pt",
+    "pt_vaule": "to_char(date('${execution_date}'),'yyyymmdd')",
+    "mode": "full"
+  },
+  "target_table": {
+    "table_name": "dpd.dpd_retail_oms_products_init_md",
+    "table_location": "oss://decathlon-${ENV_NAME}-cndp-dpd/dpd_retail/dpd_retail_oms_products_init_md",
+    "pt_key": "pt",
+    "pt_vaule": "pt",
+    "mode": "full"
+  },
+  "schema": [
+    {
+      "source_name": "product_id",
+      "source_type": "bigint",
+      "target_name": "product_id",
+      "target_type": "bigint",
+      "is_primary": "true"
+    },
+    {
+      "source_name": "goods_id",
+      "source_type": "bigint",
+      "target_name": "goods_id",
+      "target_type": "bigint",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "title",
+      "source_type": "string",
+      "target_name": "product_title",
+      "target_type": "string",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "bn",
+      "source_type": "string",
+      "target_name": "product_bn",
+      "target_type": "string",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "name",
+      "source_type": "string",
+      "target_name": "product_name",
+      "target_type": "string",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "spec_info",
+      "source_type": "string",
+      "target_name": "spec_info",
+      "target_type": "string",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "store",
+      "source_type": "bigint",
+      "target_name": "store",
+      "target_type": "bigint",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "store_freeze",
+      "source_type": "bigint",
+      "target_name": "store_freeze",
+      "target_type": "bigint",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "price",
+      "source_type": "decimal(20,3)",
+      "target_name": "price",
+      "target_type": "decimal(20,3)",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "cost",
+      "source_type": "decimal(20,3)",
+      "target_name": "cost",
+      "target_type": "decimal(20,3)",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "mktprice",
+      "source_type": "decimal(20,3)",
+      "target_name": "mktprice",
+      "target_type": "decimal(20,3)",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "weight",
+      "source_type": "decimal(20,3)",
+      "target_name": "product_weight",
+      "target_type": "decimal(20,3)",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "barcode",
+      "source_type": "string",
+      "target_name": "barcode",
+      "target_type": "string",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "unit",
+      "source_type": "string",
+      "target_name": "unit",
+      "target_type": "string",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "spec_desc",
+      "source_type": "string",
+      "target_name": "spec_desc",
+      "target_type": "string",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "cast(uptime as timestamp)",
+      "source_type": "bigint",
+      "target_name": "entry_time",
+      "target_type": "timestamp",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "cast(last_modified as timestamp)",
+      "source_type": "bigint",
+      "target_name": "last_modified",
+      "target_type": "timestamp",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "disabled",
+      "source_type": "string",
+      "target_name": "is_disabled",
+      "target_type": "string",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "marketable",
+      "source_type": "string",
+      "target_name": "is_marketable",
+      "target_type": "string",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "sku_property",
+      "source_type": "string",
+      "target_name": "sku_property",
+      "target_type": "string",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "alert_store",
+      "source_type": "bigint",
+      "target_name": "alert_store",
+      "target_type": "bigint",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "limit_day",
+      "source_type": "bigint",
+      "target_name": "limit_day",
+      "target_type": "bigint",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "cast(real_store_lastmodify as timestamp)",
+      "source_type": "bigint",
+      "target_name": "real_store_lastmodify",
+      "target_type": "timestamp",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "cast(max_store_lastmodify as timestamp)",
+      "source_type": "bigint",
+      "target_name": "max_store_lastmodify",
+      "target_type": "timestamp",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "taobao_sku_id",
+      "source_type": "bigint",
+      "target_name": "taobao_sku_id",
+      "target_type": "bigint",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "picurl",
+      "source_type": "string",
+      "target_name": "picture",
+      "target_type": "string",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "visibility",
+      "source_type": "string",
+      "target_name": "is_visible",
+      "target_type": "string",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "type",
+      "source_type": "string",
+      "target_name": "product_type",
+      "target_type": "string",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "brand_id",
+      "source_type": "bigint",
+      "target_name": "brand_id",
+      "target_type": "bigint",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "sync_ftp",
+      "source_type": "bigint",
+      "target_name": "is_sync_ftp",
+      "target_type": "bigint",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "ftp_file",
+      "source_type": "string",
+      "target_name": "ftp_file",
+      "target_type": "string",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "is_regional_sales",
+      "source_type": "string",
+      "target_name": "is_regional_sales",
+      "target_type": "string",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "cast(regional_sales_lastmodify as timestamp)",
+      "source_type": "bigint",
+      "target_name": "regional_sales_lastmodify",
+      "target_type": "timestamp",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "is_omni_commerce",
+      "source_type": "string",
+      "target_name": "is_omni_commerce",
+      "target_type": "string",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "cast(omni_commerce_lastmodify as timestamp)",
+      "source_type": "bigint",
+      "target_name": "omni_commerce_lastmodify",
+      "target_type": "timestamp",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "cast(itemstore_banding_lastmodify as timestamp)",
+      "source_type": "bigint",
+      "target_name": "itemstore_banding_lastmodify",
+      "target_type": "timestamp",
+      "is_primary": "false"
+    },
+    {
+      "source_name": "full_region",
+      "source_type": "string",
+      "target_name": "is_fullregion",
+      "target_type": "string",
+      "is_primary": "false"
+    }
+  ]
+}
